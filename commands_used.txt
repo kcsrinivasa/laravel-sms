@@ -1,0 +1,39 @@
+--This project is focused on laravel send SMS--
+---To create a project---
+composer create-project --prefer-dist laravel/laravel sms
+
+---To open project in browser---
+mv server.php index.php
+cp public/.htaccess .
+---open in browser---
+http://localhost/laravel/sms
+
+---install nexmo package----
+composer require nexmo/client
+
+---Create nexmo Account from here: ---
+https://dashboard.nexmo.com/sign-in
+
+---Add numbers to nexmo to test---
+https://dashboard.nexmo.com/test-numbers
+
+---add nexemo api keys to .env---
+NEXMO_KEY=XXXXX
+NEXMO_SECRET=XXXXXXXXXXX
+
+---install twilio package----
+composer require twilio/sdk 
+
+---Create twilio Account from here: grab your account_sid and auth_token ---
+https://www.twilio.com/console
+
+---Add numbers to twilio to test---
+https://dashboard.twilio.com/test-numbers
+
+---add twilio api keys to .env---
+TWILIO_SID=XXXXXXXXXXXXXXXXX
+TWILIO_AUTH_TOKEN=XXXXXXXXXXXXX
+TWILIO_FROM=+XXXXXXXXXXX
+
+---create sms controller---
+php artisan make:controller SMSController -r
